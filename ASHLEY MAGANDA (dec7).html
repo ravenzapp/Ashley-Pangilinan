@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #landing-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1d3557, #457b9d); /* Smooth gradient background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Modern font */
+    font-weight: bold; /* Bold typography */
+    font-size: 2.5rem; /* Larger font for readability */
+    text-align: center; /* Center text */
+    z-index: 1000;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: inset 0px 0px 60px rgba(0, 0, 0, 0.5); /* Add an inset shadow for depth */
+}
+
+#landing-page img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); /* Larger shadow for a realistic floating effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+#landing-page h1 {
+    font-size: 4rem; /* Large, bold header */
+    font-weight: bolder; /* Extra emphasis on the header */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow for depth */
+}
+
+#landing-page p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for the text */
+}
+
+#landing-page button {
+    background-color: #457b9d;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add depth with a shadow */
+}
+
+#landing-page button:hover {
+    background-color: #1d3557; /* Darken button on hover */
+    transform: translateY(-5px); /* Lift button on hover */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Increase shadow for hover effect */
+}
+
+#main-content {
+    display: none;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#main-content.show {
+    display: block;
+    opacity: 1; /* Fade-in effect */
+}
+
+/* Adding a subtle background animation for depth */
+@keyframes subtleBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+#landing-page {
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    background-size: 400% 400%;
+    animation: subtleBackground 3s ease infinite; /* Subtle animation for background gradient */
+}
+
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            color: #1d3557;
+        }
+        
+  h2 {
+    text-align: center;
+  }
+ 
+  #title-page img {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+
+        /* Set CSS Variable for Header Height */
+        :root {
+            --header-height: 60px; /* Thinner header */
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(to right, #1d3557, #457b9d);
+            color: white;
+            text-align: center;
+            padding: 30px 0; /* Thinner header */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001; /* Overlapping sidebar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+ .nav-bar {
+    position: fixed;
+    top: var(--header-height); /* Sidebar starts below the header */
+    left: 0;
+    width: 270px;
+    height: calc(100% - var(--header-height)); /* Sidebar height fills the screen */
+    overflow-y: auto; /* Add scroll bar when content overflows */
+    background: linear-gradient(to bottom, #1d3557, #122137);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid #457b9d;
+        }
+
+        .profile-section h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .profile-section p {
+            font-size: 1rem;
+            color: #a8dadc;
+            margin-bottom: 15px;
+        }
+
+        /* Social Media Icons */
+.social-media-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    gap: 20px; /* Adds space between the icons */
+    margin-top: 10px; /* Reduced margin-top to lessen space */
+}
+
+
+.social-icon {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem; /* Adjust the icon size */
+    padding: 15px; /* Increased padding for a larger circle */
+    border-radius: 50%;
+   
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex; /* Ensures the icon is a flex container */
+    justify-content: left ; /* Centers the icon horizontally */
+    align-items: center; /* Centers the icon vertically */
+    width: 50px; /* Ensure the circle is a consistent size */
+    height: 50px; /* Ensure the circle is a consistent size */
+}
+
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+        /* Navigation Links */
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            margin: 5px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .nav-bar a:hover {
+            background-color: #457b9d;
+            transform: translateX(10px);
+        }
+
+      
+.nav-bar a i {
+    margin-right: 15px;
+    font-size: 1.0rem;
+}
+
+        .nav-bar a.active {
+            background-color: #457b9d;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 270px; /* Space for sidebar */
+            padding: calc(var(--header-height) + 20px) 20px 20px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .main-content div {
+            display: none;
+        }
+
+        .main-content div.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.main-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #457b9d; /* Light blue to align with the theme */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px; /* Add spacing for a clean, impactful look */
+    text-align: center; /* Align to center for better symmetry */
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Add a decorative underline */
+.main-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #457b9d, #1d3557); /* Subtle gradient */
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.main-content h2:hover {
+    color: #1d3557; /* Change to deep blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+.main-content h2:hover::after {
+    width: 100px; /* Expand underline on hover */
+}
+
+.main-content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #1d3557; /* Deep blue for text */
+    padding: 20px 30px;
+    background: white; /* Clean, professional look */
+    border-radius: 15px;
+    border: 2px solid #457b9d; /* Light blue border */
+    box-shadow: 0 8px 15px rgba(69, 123, 157, 0.2);
+    margin-bottom: 30px;
+    text-align: justify;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.main-content p:hover {
+    background: #f5f9fc; /* Slightly off-white for hover */
+    box-shadow: 0 12px 30px rgba(69, 123, 157, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Highlighted text */
+.main-content p span {
+    color: #457b9d; /* Light blue for emphasis */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+.main-content p:hover::after {
+    width: 100px; /* Expands underline on hover */
+}
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .nav-bar {
+                width: 220px;
+            }
+            .main-content {
+                margin-left: 240px;
+            }
+        }
+
+        @media (max-width: 480px) {
+         .nav-bar {
+    position: fixed;
+    top: var(--header-height); /* Sidebar starts below the header */
+    left: 0;
+    width: 260px;
+    height: calc(100% - var(--header-height)); /* Sidebar height fills the screen */
+    background: linear-gradient(to bottom, #1d3557, #122137);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-right: 5px solid #457b9d; /* Add a border on the right side of the sidebar */
+}
+
+          .nav-bar a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    font-size: 1rem;  /* Adjust the font size here */
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+            .main-content {
+                margin-left: 0;
+                padding: calc(var(--header-height) + 15px) 15px;
+            }
+
+            .profile-section {
+                padding: 15px;
+            }
+        }
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensures the image fills the circle */
+    margin-bottom: 15px;
+    border: 3px solid #457b9d; /* Light blue border for consistency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for profile picture */
+
+
+.profile-section h3 {
+    font-size: 1.6rem; /* Slightly larger for emphasis */
+    color: white; /* Deep blue to align with theme */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Adds formality and emphasis */
+    letter-spacing: 1.5px; /* Modern spacing */
+    text-align: center;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px; /* Space for sidebar */
+    padding: calc(var(--header-height) + 40px) 20px 20px; /* Increased top padding to lower content */
+    transition: margin-left 0.3s ease-in-out;
+}
+/* Title Page */
+#title-page {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: flex-start; /* Aligns the image to the top */
+    height: 100vh; /* Full screen height */
+    width: 100%; /* Full screen width */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Customizable Properties for Image */
+#title-page img {
+
+    height: 88%; /* Ensures aspect ratio is maintained */
+    width: 120%; /* Ensures aspect ratio is maintained */
+    border-radius: var(--image-border-radius, 0px); /* Optional border radius */
+}
+
+#biography {
+    padding: 30px;
+    background: #f5f9fc; /* Light background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif;
+    color: #1d3557; /* Deep blue text for readability */
+    line-height: 1.8;
+}
+
+
+#biography h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #457b9d, #1d3557);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+#biography img {
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #457b9d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#biography img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+#biography h3 {
+    font-size: 1.6rem;
+    color: #1d3557;
+    font-weight: bold;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#biography p {
+    font-size: 1.2rem;
+    color: #1d3557;
+    margin-bottom: 15px;
+    text-align: center; /* Justify text inside the paragraph */
+    line-height: 1.8;
+    width: 100%; /* Optional: Set a width to make it look better centered */
+    margin: 0 auto; /* This centers the paragraph itself within the container */
+}
+
+
+#biography p span {
+    color: #457b9d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#biography p:last-child {
+    margin-bottom: 0; /* No extra space after the last paragraph */
+}
+
+/* Base style for buttons */
+.styled-button {
+    background-color: #457b9d; /* Light blue */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.styled-button:hover {
+    background-color: #1d3557; /* Darker blue */
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* Active button */
+.styled-button.active {
+    background-color: #f4a261; /* Highlight color */
+    color: #1d3557; /* Dark text for contrast */
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for focus */
+}
+
+/* Adjust image display layout */
+#image-display {
+    display: flex;                /* Use flexbox */
+    justify-content: center;      /* Center images horizontally */
+    align-items: center;          /* Center images vertically */
+    margin-top: 20px;
+    flex-wrap: wrap;              /* Allow wrapping if too many images */
+    width: 80%;                   /* Set the width of the container */
+    margin-left: 17%;             /* Center the container */
+    margin-right: 20%;
+    text-align: center;
+    overflow-x: auto;             /* Allow horizontal scrolling if necessary */
+}
+
+/* Style for the images */
+#image-display img {
+    margin: 10px;                 /* Space between images */
+    width: 800px;                 /* Set the width of the images */
+    height: auto;                 /* Keep the aspect ratio */
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+/* Style for image container */
+.image-container {
+    position: relative;   /* This will allow the text to overlay on the image */
+    margin: 10px;         /* Space between images */
+}
+
+/* Style for images */
+.image-container img {
+    margin: 10px;         /* Margin for images */
+    max-width: 100%;      /* Ensure images are responsive */
+    height: auto;         /* Maintain aspect ratio */
+    border-radius: 8px;   /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for images */
+.image-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+}
+
+/* Style for text overlay (the title) */
+.image-title {
+    position: absolute;
+    bottom: 10px;          /* Position text at the bottom of the image */
+    left: 50%;             /* Center the text horizontally */
+    transform: translateX(-50%); /* Offset by 50% of its width to perfectly center */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;          /* White text color */
+    padding: 5px 10px;     /* Some padding for readability */
+    font-size: 1.2rem;     /* Adjust font size */
+    font-weight: bold;     /* Make the text bold */
+    border-radius: 4px;    /* Rounded corners for the text box */
+    opacity: 0;            /* Start with hidden text */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Show the title when the image is hovered */
+.image-container:hover .image-title {
+    opacity: 1;            /* Make the title visible */
+}
+
+.styled-button:hover {
+            background-color: darkgrey; /* Background color on hover */
+            transform: scale(1.05); /* Slightly enlarge the button */
+        }
+
+
+        #image-display img:hover {
+            transform: scale(1.1); /* Slightly enlarge the image */
+
+
+
+    </style>
+</head>
+<body>
+<div id="landing-page">
+        <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469113258_444307705377397_8862990838958388833_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Aoy1JBV_VT0Q7kNvgGu-KVb&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AIJK7s6ah0FHIILa5NSFFCe&oh=00_AYASah4xk3gcdjAzXjRwcjPO7BHodJ8kJMU-HlUhvHz_8A&oe=67561DB3" alt="Profile Picture">
+        <div>Ashley D. Pangilinan</div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="nav-bar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469113258_444307705377397_8862990838958388833_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Aoy1JBV_VT0Q7kNvgGu-KVb&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AIJK7s6ah0FHIILa5NSFFCe&oh=00_AYASah4xk3gcdjAzXjRwcjPO7BHodJ8kJMU-HlUhvHz_8A&oe=67561DB3" alt="Profile Picture" class="profile-pic" onclick="showSection('title-page')">
+            <h3>Ashley D. Pangilinan</h3>
+            <p>Pre-Service Teacher</p>
+
+            <!-- Social Media Icons -->
+            <div class="social-media-icons">
+                <a href="https://www.facebook.com/ashley.pangilinan.543" target="_blank" class="social-icon" aria-label="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/azziilleeyyy?igsh=cHB2cnBvZXpkOXlz" target="_blank" class="social-icon" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="mailto:pangilinan.ashley@auf.edu.ph" class="social-icon" aria-label="Email">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <a onclick="showSection('title-page')" class="active"><i class="fa fa-home"></i> Title Page</a>
+        <a onclick="showSection('introduction')"><i class="fa fa-book"></i> Introduction</a>
+        <a onclick="showSection('acknowledgments')"><i class="fa fa-handshake-o"></i> Acknowledgments</a>
+        <a onclick="showSection('biography')"><i class="fa fa-user"></i> Biography</a>
+        <a onclick="showSection('beliefs')"><i class="fa fa-lightbulb-o"></i> Beliefs</a>
+        <a onclick="showSection('certificate')"><i class="fa fa-certificate"></i> Certificate</a>
+        <a onclick="showSection('compilations')"><i class="fa fa-clone"></i> Compilations</a>
+        <a onclick="showSection('evidence')"><i class="fa fa-check-circle"></i> Evidence</a>
+        <a onclick="showSection('reflection')"><i class="fa fa-commenting"></i> Reflection</a>
+    </div>
+
+<!-- Main Content -->
+<div class="main-content">
+<!-- Title Page -->
+<div id="title-page" class="active">
+    <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/469416881_444261542048680_3691541869923300791_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=B8Gq4TAF0d8Q7kNvgE3E9FF&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=AJQhuLmmgxH8PkAB6JHlgST&oh=00_AYDw345ycuXxrWKK_KKmASQgZ3fM5nR1gbKUUn2tfLqAdw&oe=67561FF6" alt="Title Image">
+</div>
+
+    <!-- Introduction -->
+    <div id="introduction">
+        <h2>Introduction</h2>
+        <p>This e-portfolio captures my journey as a practice teacher and observer, emphasizing my growth, experiences, and insights gained during this important phase of my academic life. It includes my expressions of gratitude in the Acknowledgements section, a summary of my personal and educational background in the Biography section, and reflections on my changing views about teaching and learning. Additionally, it contains my Certificate of Completion, a collection of worksheets and certificates that highlight my involvement and successes, and supporting evidence of my activities. <br> <br>The Reflection section offers a thoughtful look at the lessons and challenges that have contributed to my development as a future educator. More than just a set of documents, this e-portfolio symbolizes my commitment to becoming a caring and effective teacher, reflecting the values and lessons I plan to bring to my future classroom.</p>
+    </div>
+
+    <!-- Acknowledgments -->
+    <div id="acknowledgments">
+        <h2>Acknowledgments</h2>
+        <p>First and foremost, I want to express my heartfelt gratitude to my professors at the Angeles University Foundation, especially our adviser and professor in Field Study, Dr. Christiandon Aviado. Thank you for your patience, understanding, and unwavering dedication despite your busy schedule. Your guidance and insights have been invaluable throughout this journey. <br><br>
+
+       I would also like to extend my deepest appreciation to my cooperating teacher, Mrs. Nina Catherine Pamintuan, for welcoming me with open arms to Claro M. Recto Information and Communication Technology High School. Your mentorship, support, and shared expertise have prepared me for my next semester internship. Thank you for constantly encouraging and sharing your knowledge, which has greatly enriched my teaching experience.<br><br>
+
+        To my family, especially my parents, Cristal D. Pangilinan and Jhoal L. Pangilinan, thank you for believing in me from the beginning. Your unconditional support, understanding, and lack of pressure have allowed me to pursue my dreams with confidence and determination.<br><br>
+
+        To my friends, mainly my college companions Julius, Shereel, Shareena, and Abbygail, thank you for supporting me during this challenging and stressful academic year. Your companionship, laughter, and encouragement have made this year both bearable and enjoyable. I also want to thank Raven for always helping me, particularly with editing, which I struggle with. Thank you for staying up late with me to finish homework, observation notes, CBAR, and especially this e-portfolio. Your support has meant more to me than words can express.<br><br>
+
+        Lastly, to the Almighty God, thank You for Your unwavering presence in my life. Your guidance and strength have carried me through doubt, stress, and uncertainty. I know that You have been with me every step of the way, especially when I felt lost and unsure of what to do. Your blessings have been my constant source of hope and courage, and I am eternally grateful for Your love and grace.<br><br>
+
+        I would also like to extend my appreciation to everyone who has contributed to my journey, whether explicitly mentioned or not. This milestone could not have been achieved without your support and belief in me. Thank you for your invaluable contributions to my growth and success.
+</p>
+    </div>
+
+ <!-- Biography -->
+<div id="biography" style="padding:20px;">
+    <h2>Biography of the Practice Teacher / Observer</h2>
+    <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469113258_444307705377397_8862990838958388833_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Aoy1JBV_VT0Q7kNvgGu-KVb&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AIJK7s6ah0FHIILa5NSFFCe&oh=00_AYASah4xk3gcdjAzXjRwcjPO7BHodJ8kJMU-HlUhvHz_8A&oe=67561DB3" alt="Biography Photo" style="display:block; margin:10px auto; width:300px; height:auto; border-radius:8px;">
+    <h3><b>Name:</b></h3> <p> Ashley Dimatulac Pangilinan </p><br>
+<h3><b>Date of Birth:</b></h3> <p> August 27, 2002 </p><br>
+<h3><b>Age:</b></h3> <p>22 </p><br>
+<h3><b>Place of Birth:</b></h3> <p> Jose B. Lingad Memorial General Hospital, City of San Fernando, Pampanga</p><br>
+<h3><b>Hometown:</b></h3> <p> Atba, Aftershock, San Vicente, Santo Tomas, Pampanga </p><br><br>
+
+<h3><b>Early Life and Family</b></h3> <br> <p>
+Ashley Dimatulac Pangilinan was born on August 27, 2002, at Jose B. Lingad Memorial General Hospital in the City of San Fernando, Pampanga. She was raised in a close-knit, religious family in Santo Tomas, Pampanga. As the oldest child of Cristal D. Pangilinan and Jhoal L. Pangilinan, she has a younger brother named Kyler D. Pangilinan. <br><br>
+
+Her family's strong beliefs have played a significant role in her life. Since 2011, Ashley has been an active member of the Children of Mary Immaculate (COMI), a church group that has helped her grow spiritually and engage more with her church community.</p><br><br>
+
+<h3><b>Education</b></h3> <br> <p>
+Ashley’s educational journey showcases her motivation and love for learning. She started her primary education at Matinian School Inc. and then attended San Fernando Elementary School. She completed her junior high school at San Matias National High School, where she developed a keen interest in social studies. She attended the University of the Assumption for senior high school to prepare for future academic endeavours.<br><br>
+
+Currently, Ashley is in her fourth year studying for a Bachelor’s degree in Secondary Education with a focus on Social Studies at Angeles University Foundation. Her dedication to her education is driven by her passion for exploring history, culture, and how societies function. </p><br><br>
+
+<h3><b>Personal Interests</b></h3> <br> <p>
+Ashley finds solace in reading fictional books, which serve as her refuge and a way to escape the harsh realities of life. These stories allow her to express herself creatively and help her handle her challenges.<br><br>
+
+Being with her friends and family also brings Ashley joy and helps her relax. Her close connections with loved ones show how much she values important relationships.</p><br><br>
+
+<h3><b>Character and Aspirations</b></h3> <br> <p>
+Ashley Dimatulac Pangilinan is characterized by a mix of faith, determination, and ambition. Her active participation in her church and commitment to education reflect her balanced personality. She aspires to share her knowledge and experiences to inspire others, teach youngsters, uphold her values, and positively impact society.
+</p>
+</div>
+
+
+
+<!-- Beliefs -->
+<div id="beliefs">
+    <h2>Beliefs about Teaching and Learning</h2>
+    <label for="belief-dropdown">Select Belief Type: </label>
+    <select id="belief-dropdown" onchange="showBeliefContent()">
+        <option value="pre">Pre</option>
+        <option value="post">Post</option> 
+    </select>
+    <div id="pre-belief" class="belief-content">
+      <br>  <p>As I got ready for my upcoming deployment, I felt excitement and anticipation. I distinctly recalled my time as a student, watching student teachers at our school. They seemed to handle their responsibilities effortlessly, and I often thought their jobs looked simple. I imagined that becoming a high school teacher would be an easy experience, straightforward and predictable. <br><br>
+
+In my mind, teaching involved various tasks that appeared clear and uncomplicated. I thought I would grasp the educational material so well that memorizing lessons would happen naturally. I envisioned myself carefully preparing PowerPoint presentations to help communicate ideas effectively. Assigning homework seemed easy, as did coming up with fun activities to keep students engaged. I expected that grading assignments would be routine, helping me track students' progress smoothly. I even intended to write detailed lesson plans to ensure each class was organized and meaningful while calculating grades accurately.<br><br>
+
+I believed that teaching was mostly about sharing knowledge from the teacher to the students. This view made me think that if I could handle all the practical parts of teaching well, the learning would happen without any issues. I was eager to put into practice the skills and theories I had learned during my studies in a real classroom. It was not just about teaching; it was also a chance for me to show my readiness and passion for positively impacting my students' education. I looked forward to the challenge and was excited to dive into the unique setting of high school learning.
+</p>
+    </div>
+    <div id="post-belief" class="belief-content" style="display:none;">
+        <br> <p>After observing during the first semester, I quickly realized that teaching is much more complicated and layered than I had originally thought. I learned that being a teacher goes beyond just presenting lessons and grading assignments. Through my experiences with my cooperating teacher, I saw that teaching requires flexibility, understanding of emotions, and ongoing problem-solving skills.<br><br>
+
+What struck me the most was how a teacher has to take on many roles, often at the same time. Teachers aren’t just people who know the subject; they also serve as caregivers, mentors, and emotional support for their students. For example, when a student feels unwell or is having a tough time emotionally, the teacher offers comfort and takes on a nurturing role. When a student faces personal or academic difficulties, the teacher steps in as a counselor, helping them navigate these challenges. A teacher can even bring joy to the classroom, sometimes acting playfully to lift a student’s spirits and foster a positive atmosphere.<br><br>
+
+One of the biggest insights I gained was that teaching means being like a second parent to the students. The duty of guiding, caring for, and supporting students extends beyond the classroom. It involves looking after their overall academic, emotional, and social growth. I’ve come to realize that teaching is more than just a job; it is a meaningful calling that requires a strong dedication to influencing the lives of young people.<br><br>
+
+This experience has shown me that teaching is about forming connections with students and creating a welcoming and safe environment where they can learn and develop. It’s about being available for them when they need help, listening to their worries, and guiding their growth in school and life. The work of a teacher is hard to measure in many ways, and the influence they have on their students can last a lifetime. Teaching is not only about the information you share; it’s about the love, care, and commitment you provide to your students.
+</p>
+    </div>
+</div>
+
+
+    <!-- Certificate -->
+    <div id="certificate">
+        <h2>Certificate of Completion</h2>
+        <p>Certificate content goes here...</p>
+    </div>
+
+<div id="compilations">
+    <h2>Compilations of Worksheets and Certificates</h2>
+    <!-- Dropdown Menu -->
+    <select id="compilation-dropdown" onchange="displayImages(this.value)">
+        <option value="">Select an option</option>
+        <option value="certificates">Certificates</option>
+        <option value="worksheets">Observation Notes & Worksheets</option>
+    </select>
+
+
+
+
+
+
+
+
+
+
+    <!-- Content Display Area -->
+    <div id="compilation-content">
+        <p>Please select an option to view the details.</p>
+    </div>
+</div>
+
+<!-- Evidence Section -->
+<div id="evidence" style="text-align: center; margin: 20px 0;">
+        <h2>Documentary Evidence</h2>
+  
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px;">
+        <!-- Images with fade-in animation and hover effects -->
+        <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469490785_446248075183360_981520126321584977_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KfocRPRkaQMQ7kNvgH0Clpd&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AUEbQlAsHfp5NvqMFuI8QEP&oh=00_AYBI_YyNTVsw-H3wpRH2VYg0zmSDDG8X0IHK5tR5ZPa3yw&oe=6759BAB9"
+             alt="Photo 1" class="evidence-img" onclick="openModal(this)">
+        
+        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469465452_446248048516696_2799853029846508986_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UZPg7_BJGKkQ7kNvgEEG4-Z&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=Av5mYaLwmkboKSqdQhYTARL&oh=00_AYBLfoOyY8-vAH8v1CFtqq8rwCuJvgBwHmB85h9kky3vhw&oe=6759C0B1"
+             alt="Photo 2" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469352933_446247995183368_3114930214359379349_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=J4eRAIuVKK4Q7kNvgFYM-6O&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=AvGjbepzC_ugDfEDwkzdCIU&oh=00_AYB97nGDlS1H95dFwTcNgohRVbdTQB0arQvCBrjmQHd0Sw&oe=6759DDAC"
+             alt="Photo 3" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469489666_446247988516702_7500946804658614361_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=wicl5wbjo7cQ7kNvgFSq_tO&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AYgvrAsoDL44zq6diPCCd2g&oh=00_AYBQ7Wr6nyyzzmE69jnQ9cELApjGuuUMDQj8yOURRyQKow&oe=6759C4A1"
+             alt="Photo 4" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469636265_446247938516707_6217230981860950795_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=j8roVXTQBGsQ7kNvgE2tS5v&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=A9HI-QsUkpkGwcvcp9XSn2c&oh=00_AYB5_SFWhNeBzUvSMo_JA_vtVCHgLp6iLmygPw5swDwpbQ&oe=6759E907"
+             alt="Photo 5" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469482890_446247888516712_4148553225396927555_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PgVNf1_9DX4Q7kNvgHZcC-y&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=A7ymNTmyzd0R2XJ9l_5Gp9X&oh=00_AYCudhkHf0QreSWLeQk21INjZPE0B3_3IJx7YJNuEh3hjA&oe=6759DE9C"
+             alt="Photo 6" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469533673_446247898516711_4147373966419107491_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=nWx3Hgl_zNkQ7kNvgEbxhXV&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=AnKJXtWOOfcn8kndBu3bh6j&oh=00_AYBXI42QO_7qkZEnd09bmM4FvQgT8p3PIlLSk6eGKh74wg&oe=6759D01A"
+             alt="Photo 7" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469404361_446247815183386_8623189137917955596_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aFX266JAXyYQ7kNvgGhvD4Q&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=AUGnjRbeSwnydQ77HDiXvvD&oh=00_AYBhCRktl4EpWfHeF-hUM1bOcXYWdlIw84WkubelwZboJQ&oe=6759D620"
+             alt="Photo 8" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469388712_446247811850053_5224536810134871951_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5Mi1xHBaCTwQ7kNvgE8eYu-&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=AKkCb7d9MeqKSa8wAeGStJx&oh=00_AYDvR1W0kcbGl50qUnHLyu2RaannasxAs9ZVL9Tu-qz7gg&oe=6759E113"
+             alt="Photo 9" class="evidence-img" onclick="openModal(this)">
+
+        <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469384528_446247845183383_2134731272141973460_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=G9Z1LPGr-nYQ7kNvgHXLt-L&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=ALLWHohDWAouoUn0Vii_O-X&oh=00_AYCqgsraynG4VvzOizeAzL2Imv-ceBWulEAsn7OCGJsMxw&oe=6759DB65"
+             alt="Photo 10" class="evidence-img" onclick="openModal(this)">
+    </div>
+</div>
+
+<!-- Modal for Image Zoom -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Zoomed Image">
+</div>
+
+
+<!-- CSS for Hover Effects and Fade-in Animation -->
+<style>
+  <style>
+  /* Style for the Evidence Section */
+#evidence {
+    text-align: center;
+    margin: 20px 0;
+    padding: 40px 20px;
+    background-color: #fff; /* Clean background */
+    border-radius: 10px;
+}
+
+.evidence-img {
+    width: 300px; /* Slightly smaller for a vintage feel */
+    height: auto;
+    border: 15px solid #fff; /* White border like a Fuji film photo */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, filter 0.3s ease-out;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    object-fit: cover; /* Maintain aspect ratio */
+    filter: brightness(1.05) contrast(1.2) saturate(1.1); /* Fuji film color look */
+}
+
+.evidence-img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Increase shadow for pop effect */
+    filter: brightness(1.1) contrast(1.3) saturate(1.2); /* Enhance color on hover */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation Delay for Staggered Effect */
+.evidence-img:nth-child(1) { animation-delay: 0.1s; }
+.evidence-img:nth-child(2) { animation-delay: 0.2s; }
+.evidence-img:nth-child(3) { animation-delay: 0.3s; }
+.evidence-img:nth-child(4) { animation-delay: 0.4s; }
+.evidence-img:nth-child(5) { animation-delay: 0.5s; }
+.evidence-img:nth-child(6) { animation-delay: 0.6s; }
+.evidence-img:nth-child(7) { animation-delay: 0.7s; }
+.evidence-img:nth-child(8) { animation-delay: 0.8s; }
+.evidence-img:nth-child(9) { animation-delay: 0.9s; }
+.evidence-img:nth-child(10) { animation-delay: 1s; }
+
+/* Modal for Image Zoom */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+/* Modal Image */
+#modalImage {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease-out;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+</style>
+
+
+
+
+
+
+    <!-- Reflection -->
+    <div id="reflection">
+        <h2>Reflection</h2>
+        <p>Reflection content goes here...</p>
+    </div>
+</div>
+
+<div id="images-container" 
+     style="display: flex; justify-content: center; align-items: center; margin-top: 20px; flex-wrap: wrap; width: 80%; margin-left: 17%; margin-right: 20%;">
+    <!-- Certificates -->
+    <div id="certificates" class="image-group" style="display: none; text-align: center;">
+        <div class="image-container">
+            <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469210592_444360725372095_3175935028477253914_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fJRTDznxesIQ7kNvgEm6giv&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=A4DY8HGouZsbDMvr5PmY4JC&oh=00_AYDaCnOCpL8W5Iqr2rQgS3Hqsfu3E_Eb48r_YgXfwXqWlQ&oe=6757AE2C" alt="Certificate 1" style="margin: 10px; max-width: 100%; height: auto;">
+            <span class="image-title">Classroom-Based Action Research</span>
+        </div>
+        <div class="image-container">
+            <img src="https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/469455662_444360668705434_5122519193907019816_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NDLSnQV1udwQ7kNvgF40nWN&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&_nc_gid=AoXd8gCk7XW1j0M3OQPcrNI&oh=00_AYBaei9NYuaiWyXr22EeKrc8DbH9jknd6NHQAOBe6T1UsA&oe=67563BA1" alt="Certificate 2" style="margin: 10px; max-width: 100%; height: auto;">
+            <span class="image-title">Adjustment and Mental Health</span>
+        </div>
+        <div class="image-container">
+            <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469288906_444360672038767_2435326199975069947_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Bhv-MF8PbbIQ7kNvgH4JsCY&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=AfkQtZe4Oj8O6I6AR7G_7FL&oh=00_AYCYYYzxQOEu7UulAHDD4TC0Drjo4QuvZdXN6i76WaetzQ&oe=67564AA8" alt="Certificate 3" style="margin: 10px; max-width: 100%; height: auto;">
+            <span class="image-title">School Forms and Records</span>
+        </div>
+        <div class="image-container">
+            <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469218447_444360665372101_1086485728371560445_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=v_Mozg_3RaYQ7kNvgGDdlCO&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A2GiWgms7RH292lEjByZqj2&oh=00_AYCy3V2O02A6fdEGrvkmn2J73KAZ4VgUHfhnH-QvpEOr6Q&oe=67564C65" alt="Certificate 4" style="margin: 10px; max-width: 100%; height: auto;">
+            <span class="image-title">Catch-Up Fridays</span>
+        </div>
+    </div>
+
+
+
+</div>
+
+<button id="back-to-top" 
+    onclick="scrollToTop()" 
+    style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(145deg, #457b9d, #1d3557); color: white; border: none; cursor: pointer; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.1); text-align: center; line-height: 40px; font-size: 20px; font-weight: bold; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; animation: pulse 1.5s ease-in-out infinite;">
+    ↑
+</button>
+
+<style>
+    /* Pulse animation to create the movement */
+    @keyframes pulse {
+        0% {
+            transform: scale(.9);
+        }
+        50% {
+            transform: scale(1.0); /* Slight enlargement */
+        }
+        100% {
+            transform: scale(.9);
+        }
+    }
+
+    #back-to-top:hover {
+        background: linear-gradient(145deg, #1d3557, #457b9d); /* Reversed gradient on hover */
+        transform: scale(1.1); /* Slightly enlarge the button */
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.15); /* Enhance shadow on hover */
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div id="worksheets" class="image-group" style="display: none; text-align: center;">
+
+<div class="buttons-container" 
+     style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; width: 80%; margin-left: 17%; margin-right: 20%; text-align: center;">
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <button class="styled-button" onclick="showImages(1, this)">Observation Notes 1</button>
+        <button class="styled-button" onclick="showImages(2, this)">Observation Notes 2</button>
+        <button class="styled-button" onclick="showImages(3, this)">Observation Notes 3</button>
+    </div>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <button class="styled-button" onclick="showImages(4, this)">Observation Notes 4</button>
+        <button class="styled-button" onclick="showImages(5, this)">Observation Notes 5</button>
+        <button class="styled-button" onclick="showImages(6, this)">Observation Notes 6</button>
+        <button class="styled-button" onclick="showImages(7, this)">Observation Notes 7</button>
+    </div>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+
+        <button class="styled-button" onclick="showImages(8, this)">Observation Notes 8</button>
+        <button class="styled-button" onclick="showImages(9, this)">Observation Notes 9</button>
+                <button class="styled-button" onclick="showImages(10, this)">Observation Notes 10</button>
+    </div>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+
+        <button class="styled-button" onclick="showImages(11, this)">Observation Notes 11</button>
+        <button class="styled-button" onclick="showImages(12, this)">Observation Notes 12</button>
+                <button class="styled-button" onclick="showImages(13, this)">Observation Notes 13</button>
+    </div>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+
+        <button class="styled-button" onclick="showImages(14, this)">Worksheets 1</button>
+        <button class="styled-button" onclick="showImages(15, this)">Worksheets 2</button>
+        <button class="styled-button" onclick="showImages(16, this)">Worksheets 3</button>
+    </div>
+<!-- Floating Back to Top Button -->
+<button id="back-to-top" 
+    onclick="scrollToTop()" 
+    style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 40px; height: 40px; border-radius: 50%; background-color: #457b9d; color: white; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center; line-height: 40px; font-size: 15px; transition: transform 0.3s ease, background-color 0.3s ease;">
+    ↑
+</button>
+
+
+
+
+</div>
+
+
+
+<div id="image-display" 
+     style="display: flex; justify-content: center; align-items: center; margin-top: 20px; flex-wrap: wrap; width: 80%; margin-left: 17%; margin-right: 20%; text-align: center;">
+    <!-- Images will be dynamically added here -->
+</div>
+
+</div>
+
+
+
+
+
+
+
+ <!-- JavaScript -->
+<script>
+  function showSection(sectionId) { 
+    const sections = document.querySelectorAll('.main-content div'); 
+    sections.forEach(section => { 
+        section.classList.remove('active'); 
+    }); 
+
+    const selectedSection = document.getElementById(sectionId); 
+    if (selectedSection) { 
+        selectedSection.classList.add('active'); 
+    } 
+
+    // Handle leaving the "compilations" section 
+    if (sectionId !== 'compilations') { 
+        // Reset dropdown to default value 
+        const compilationDropdown = document.getElementById('compilation-dropdown'); 
+        compilationDropdown.selectedIndex = 0; 
+
+        // Reset content display area 
+        document.getElementById('compilation-content').innerHTML = "<p>Please select an option to view the details.</p>"; 
+
+        // Hide all image groups 
+        document.querySelectorAll('.image-group').forEach(group => { 
+            group.style.display = 'none'; 
+        }); 
+
+        // Clear the image display area
+        const imageDisplay = document.getElementById('image-display');
+        imageDisplay.innerHTML = ''; // Clear existing images
+    } else {
+        // If returning to the compilations section, clear the image display area
+        const imageDisplay = document.getElementById('image-display');
+        imageDisplay.innerHTML = ''; // Clear existing images
+    }
+
+    // Handle title page visibility 
+    const titlePage = document.getElementById('title-page'); 
+    if (sectionId !== 'title-page') { 
+        titlePage.style.display = 'none'; 
+    } else { 
+        titlePage.style.display = 'flex'; 
+    } 
+
+    // Update active class on navigation links 
+    const links = document.querySelectorAll('.nav-bar a'); 
+    links.forEach(link => { 
+        link.classList.remove('active'); 
+    }); 
+    const activeLink = Array.from(links).find(link => link.textContent.trim().toLowerCase() === sectionId.replace('-', ' ').trim()); 
+    if (activeLink) { 
+        activeLink.classList.add('active'); 
+    } 
+}
+
+
+    function showBeliefContent() {
+        const selectedValue = document.getElementById('belief-dropdown').value;
+        const preBelief = document.getElementById('pre-belief');
+        const postBelief = document.getElementById('post-belief');
+
+        if (selectedValue === 'pre') {
+            preBelief.style.display = 'block';
+            postBelief.style.display = 'none';
+        } else {
+            preBelief.style.display = 'none';
+            postBelief.style.display = 'block';
+        }
+    }
+    document.addEventListener("DOMContentLoaded", showBeliefContent);
+
+    // JavaScript to handle dropdown changes and display corresponding images
+    function displayImages(selectedValue) {
+        // Hide all image groups
+        document.querySelectorAll('.image-group').forEach(group => {
+            group.style.display = 'none';
+        });
+
+        // Show the selected image group
+        if (selectedValue) {
+            document.getElementById(selectedValue).style.display = 'block';
+        }
+    }
+
+function showImages(buttonNumber, buttonElement) {
+    // Highlight the active button
+    const buttons = document.querySelectorAll('.styled-button');
+    buttons.forEach(button => button.classList.remove('active')); // Remove active class
+    buttonElement.classList.add('active'); // Add active class to clicked button
+
+    const imageDisplay = document.getElementById('image-display');
+
+    // Clear existing images
+    imageDisplay.innerHTML = '';
+
+    // Define image links for each button
+    const imageLinks = {
+        1: [
+            'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469277121_445104761964358_320037347111447783_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KfC4ordMeEkQ7kNvgFQftL_&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=AQX6i4eezlwm5C6BWQBrfx4&oh=00_AYCpqRUbUeKczBAcVXw15LasEUheKqd4vlIFN5e9cMGrNw&oe=675779BE',
+            'https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469144496_445104758631025_3173839386443576039_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vrDVGqEiYeUQ7kNvgFP8GsV&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A7mPgJsjBr-3OQtFrlsG6VY&oh=00_AYAbYTFPbi64ICQReiksqFMWFo9t5gqg0Eo1i9J6lvygMw&oe=6757AF58'
+        ],
+        2: ['https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/469460379_445110358630465_3331390588858308710_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bvSYPaKww2UQ7kNvgEdT5ay&_nc_zt=23&_nc_ht=scontent.fmnl25-2.fna&_nc_gid=AKil3a86w2qAevw0Ny1JxL7&oh=00_AYCW7hby39ZsNS3exy52YBg-4RX3yWvUlPzskd-2uFTHBQ&oe=67578C3A', 'https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469261380_445110361963798_1178539872284002424_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=G6rFXWgBzncQ7kNvgFa1tsX&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A4P8mrB5_4b_uztkVOsBKNZ&oh=00_AYAmTNlFsuOyIzV4257l7jZoRQg76AMy2RHcs4qqiElpnA&oe=6757B055', 'https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/469351470_445110355297132_7538712110568995084_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=f1IAFQQ3ddMQ7kNvgHXJkoI&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=Ap2qW3-QRE9RyynjjbRDZHp&oh=00_AYDcZEWo7JUM-oRQTxn3in1rmLDa9b6YrJ-ZzHtzWj2qGg&oe=675783A7'],
+        3: ['https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469310067_445110565297111_5160031725995804874_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sxGlTKp7LQEQ7kNvgHkEmv1&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AH4CdKF07lzVH-M13WX6W3N&oh=00_AYDNVnrhhyWA6YVl2VbZA6CUbhd6IqydxOPoi0-Ej9Yq7Q&oe=6757A963', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469448025_445110585297109_9100718613397560388_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=QuKuRSs0uM4Q7kNvgFGu3T3&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=ARH7bMQYCDWO9964LieCbzG&oh=00_AYDzX6STIumQXl3QsLCz5WXAFfFR_VLwfnHf-YF8jQAPpw&oe=6757A1C2', 'https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/469223188_445110591963775_7993219829054984503_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zjHESCZ0bCQQ7kNvgGXIB97&_nc_zt=23&_nc_ht=scontent.fmnl25-2.fna&_nc_gid=Aq5FmpRfb9FV0N8SKLs7Xgk&oh=00_AYCdtzRSVn-PfvRUoL3YC0eaHOX7LQA0B0YkQjRt_8dMrw&oe=6757AE86'],
+        4: ['https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/469138957_445110841963750_7809956436665282529_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=FbLa2ChHYHoQ7kNvgEx-adg&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&_nc_gid=A-hUzjGTSqXTvTPVY-dcwfO&oh=00_AYAlWrNWMESo2IDvUhHnTpTmZDXlnXm5FGULjjF7FTV8IA&oe=6757A371', 'https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/469302761_445110861963748_88067496674986263_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3-7QRj-KiuUQ7kNvgFOmY9r&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=AuolyI_wNlkDp-phHOm8gOQ&oh=00_AYCNxAXtSX5GPfu7ueAFc41jVVR1h5wkKXrptiUXtBb9bw&oe=67578F41', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469288643_445110858630415_640082049322072063_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pK_q-pDQdcwQ7kNvgFYrahc&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=A6OTCsk7uWxGw4IcIoZb04K&oh=00_AYD4J8EfOaBZSD4Mnuslpn3ViDRPiiQcBn7_nHONGqmciw&oe=675792F1'],
+        5: ['https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469167493_445111118630389_3889258206511434573_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vDKY3FVzl7kQ7kNvgHPoXYJ&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A6tssku0b4_yWXi_EY7IFtB&oh=00_AYBtvylwODeuJkRaQnqAXt7S-T4zV1mxWMi_EdvfUZShNA&oe=67579B7D', 'https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/469361556_445111148630386_7518764688408251898_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=okd9zBOvIkYQ7kNvgFeKnHl&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=APwgYp4Hqg0Yvt8qU_ZStIi&oh=00_AYDZcw0t95qbit4wtlCJAnJvbwEyiG7SJ-88D06L1W4VXw&oe=6757A335', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469334215_445111145297053_3832812298328177260_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Z5ClGWdmCLsQ7kNvgEp2ym9&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=A_ChbPF8bdZyUCej0M9Jonp&oh=00_AYClWFoQEibUF4MP2fdW5vogcSIrecbTEC2R57YUq97Enw&oe=6757A8A6'],
+        6: ['https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/469317916_445111361963698_4765224512169770890_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=w9ym_M61DBwQ7kNvgHUMv8U&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=A2pkMM4m6KKf4TMwyRVSoyP&oh=00_AYAf96fT4SnoNnBVizGXBjMsOURIsNZYFNuJpp6vUOK4pQ&oe=67578F2B', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469353354_445111358630365_5412676607505392239_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iOsBGl2On4EQ7kNvgF7qVhN&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=A2ZtLvz9H9d3WDV68M-fNoW&oh=00_AYCNYdYicnGRHURMISKE-a1ldFoz37HAckz3iSgD-7u-2w&oe=67577BCC', 'https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/469303151_445111355297032_586665515943509026_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4wSN7wUf5BEQ7kNvgFYVzLZ&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=ANk9fh8Df9oybHPRqDpmFXe&oh=00_AYAt1KQIEtkitP_HyMNNYo5skcBhSyd6sDwIDg-SoadxrQ&oe=67578873'],
+        7: ['https://scontent.fmnl25-6.fna.fbcdn.net/v/t39.30808-6/469216238_445111608630340_3417159326591592422_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4D28FvxhcgAQ7kNvgGlJ97N&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&_nc_gid=AdU1o6GHfdOXpFS7SUXTGPk&oh=00_AYDOIWL-_hrzCKE5pnSeLgIMalrjbas8FKlX4pSmJea_MQ&oe=67579446', 'https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469212749_445111621963672_869697684788419259_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ssDeEBIOiwUQ7kNvgF_6Xou&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=A6QP8AO4kLo9BlgBveLOxoR&oh=00_AYBATim2Lcg2FQtUfQq-USHZpjoihxkFu0XJctW_Qh0Rsg&oe=6757AD8C', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469390327_445111618630339_2056382275272893393_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Iz-B2pVixMEQ7kNvgFkeiHF&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=AzqTOjsEOdrMGFEKhJqJCP2&oh=00_AYDmCebKyHxqgwUE9JVgwHLHvxuGdva0yP0Y7vmO4vaQ1A&oe=67579AEE'],
+        8: ['https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/469361826_445111865296981_2457248156988231500_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iji-If4rI-UQ7kNvgFVp07C&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=AHp-3OQE4hULo7RcpFCHQnY&oh=00_AYD2ehXI55fuEMk01zQZvgVn6lOGme3Jhfe5Owc7HfI2lg&oe=67577D6A', 'https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/469237656_445111875296980_4227515674688546405_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=x82CjI-777YQ7kNvgH4h4KJ&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&_nc_gid=A9T9Vn3waRic9qSGbup2r7i&oh=00_AYC3DSokHle7_eaUjkC4ZXOF2G6-F1gi_CEIrYByovF7Rw&oe=6757A157', 'https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/469346847_445111868630314_813182818101424270_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=apS91MEwYdUQ7kNvgGBfmQG&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=AdvOhPFDp6u4biKrBoAMxs8&oh=00_AYBaAwlhRZg1GmneHLIJtRW7PbxcCR-qgljk3kWQxlJt3Q&oe=6757AFDC'],
+        9: ['https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/469159776_445112121963622_7192721612733305620_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=f0xCd9v1lHwQ7kNvgGvwi-g&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=AcazJcTDW9YMVQ-0j5iBJo0&oh=00_AYBueFR0Bc-mSvQJjmtlsZSjDZFkPLnXgCE1W50feZzehQ&oe=67579EB5', 'https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/469361640_445112128630288_6522192720563333502_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rnk9YcucYkYQ7kNvgF-6dVw&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=ACv5U2rBNtuwSgT-vsxOqJf&oh=00_AYDrKdYnNVaNGUukADfIQHnAIJq7v_HTrSPlDRPeOjMcfQ&oe=67578996', 'https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/469387696_445112155296952_3001843305791186408_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=XDdc35ThtXIQ7kNvgHKjKJI&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AVcjPeqkIUdXqhpNu_3fPB2&oh=00_AYDdo5_m7JeJpvpUkvJM02K6rt_atwXaLJSZW-nXwRI7ng&oe=67578069'],
+        10: ['https://example.com/image7.jpg', 'https://example.com/image8.jpg', 'https://example.com/image9.jpg'],
+        11: ['https://example.com/image7.jpg', 'https://example.com/image8.jpg', 'https://example.com/image9.jpg'],
+        12: ['https://example.com/image7.jpg', 'https://example.com/image8.jpg', 'https://example.com/image9.jpg'],
+        13: ['https://example.com/image7.jpg', 'https://example.com/image8.jpg', 'https://example.com/image9.jpg'],
+        
+        14: ['https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/469345564_445812621893572_3133739931084929290_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5ROOP1lnUcsQ7kNvgEZN6Dg&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=AZWmYszz5jO6r7aokL8xTiN&oh=00_AYAyYS-Lcq-KdLAexhet-1eAm2bLOg33VQadmq0GBhhRAA&oe=6759015E', 'https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469435895_445812635226904_4749459177766576746_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=e7yH4M6MPTEQ7kNvgEeUY6D&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=AckKV4W8NtzE2-nCtzpahot&oh=00_AYA7kEyqxvbjjGd1RF-bX6mMBSq8nvrIKGPDf0orzCGWBg&oe=6759085D', 'https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469433829_445812645226903_7052160187274574527_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9hcLquop0h0Q7kNvgFHYs7I&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=Anutr7NfSDSIgr_GAxpGYQA&oh=00_AYD3L1d-7gk7ofYnYXgqiWfjALbow-gaRaYdrrNJB8LRHw&oe=67590D1C','https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469335327_445812701893564_2127184189926130098_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ljpE7NKwODEQ7kNvgEqYvMR&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=A2nBXViqbWtQ2WbTldRMOWi&oh=00_AYBWLoW8r05R-ElTFWPBxxB7hNjfEgbCYxLmtlEsa8USyQ&oe=6759019F','https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/469319344_445812698560231_7065205165523752055_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aiPHbrSR0NgQ7kNvgEBV12B&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=A5mqF7p7Dr3s2hsp5PNFT5X&oh=00_AYAjrQjLTjc0I3agv8EcNC_6hbangn5P0Q6sHhwyA-CZ-A&oe=67590575'],
+        15: ['https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469346602_445813428560158_1204763576315731161_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=d9SVWkJO4cMQ7kNvgGZn-XA&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=AFG_7o4GcBBZbamZRNKVepv&oh=00_AYBApcMhvTRfoO74GF2CMqir5Tz3pFt3khyKSzP8apksww&oe=6759044D', 'https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/469352299_445813445226823_865756119977275902_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KHLp--rK094Q7kNvgFGnf5m&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=AFpe7Kbgn1y--dJiwZgiAgG&oh=00_AYBvIa5mjiih33zf-rxcvA9RfqhITnYIR4GbqveokM0j9w&oe=6758FE17', 'https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469361039_445813448560156_7033346400868379272_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LHz_TC_EkzoQ7kNvgFAlA41&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AmSrnE8dlCjCVXPphrsGbDW&oh=00_AYBKJ8FO1JfkvZE4ydyJN-GVOE_EKBQ_w53Foeb4AkbCsA&oe=67590686'],
+        16: ['https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/469403888_445813878560113_4397988647917931154_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=s9SufV3ND9cQ7kNvgFn075L&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=AVY8WUEEFU1Nj6SxvAq-6EQ&oh=00_AYBXShuKercJDtyb7eT5RXtQZjm4JZgGJ6PVl8xJaV80xw&oe=6758E0BE', 'https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469385022_445813885226779_5374523665793218554_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=H9ESrWtdBssQ7kNvgFeMx2C&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=A4Jkzmf6Vq0u9P0nlV64gB7&oh=00_AYC4wF_DMMbCgKlNzwDtLORuM5phz7tQNKDMaBfiakUKyA&oe=6758EFEA', 'https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/469538383_445813881893446_6048303443885877716_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7Mz2gi5ZvnUQ7kNvgGSvuIf&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=Ak6cypdf0lAvSRoGR9zHj2c&oh=00_AYA_a0JP5C6bFoJWBvGBskkTrDrx83agdlb1k0VlF5ytjw&oe=67591063','']
+    };
+
+    // Get the image URLs for the clicked button
+    const images = imageLinks[buttonNumber];
+
+    // Display the images
+    images.forEach(link => {
+        const img = document.createElement('img');
+        img.src = link;
+        img.alt = 'Image';
+        imageDisplay.appendChild(img); // Append image to the display container
+    });
+}
+
+function displayImages(selectedValue) {
+    // Clear existing images
+    const imageDisplay = document.getElementById('image-display');
+    imageDisplay.innerHTML = ''; // Clear image display area
+
+    // Hide all image groups
+    document.querySelectorAll('.image-group').forEach(group => {
+        group.style.display = 'none';
+    });
+
+    // If "Clear All" is selected, simply return without showing any images
+    if (selectedValue === 'clear') {
+        return;
+    }
+
+    // Show the selected image group
+    if (selectedValue) {
+        document.getElementById(selectedValue).style.display = 'block';
+    }
+}
+// Function to scroll back to top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scrolling
+    });
+}
+
+// Show or hide the button based on scroll position
+window.addEventListener('scroll', () => {
+    const button = document.getElementById('back-to-top');
+    if (window.scrollY > 100) {
+        button.style.display = 'block'; // Show button
+    } else {
+        button.style.display = 'none'; // Hide button
+    }
+});
+
+// Function to hide the landing page and show the main content
+        function showMainContent() {
+            document.getElementById('landing-page').style.display = 'none'; // Hide landing page
+            document.getElementById('main-content').style.display = 'block'; // Show main content
+        }
+
+        // Set a timeout to show the main content after 5 seconds
+        setTimeout(showMainContent, 3000);
+// Open the modal and display the clicked image
+    function openModal(image) {
+        var modal = document.getElementById("imageModal");
+        var modalImage = document.getElementById("modalImage");
+        modal.style.display = "flex";
+        modalImage.src = image.src;
+    }
+
+    // Close the modal
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>
